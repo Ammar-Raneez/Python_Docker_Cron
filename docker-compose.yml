@@ -1,0 +1,15 @@
+version: '3'
+name: python-docker
+services:
+  cron:
+    container_name: cron
+    build:
+      context: ./cron
+      dockerfile: Dockerfile
+    networks:
+      - python_cron_network
+    env_file:
+      - .env
+
+networks:
+  python_cron_network:
